@@ -42,7 +42,6 @@ int main(int argc, char **argv) {
     // Normally, we would use a standard sorting function to sort the elements of an array, but we're going to hand-write
     // some "hardcoded three-element" sorting code for the purpose of understanding pointers betters and learning C.
     // Let's write a naive bubble sort!
-    // TODO
 
     // Pass 1. This pushes the greatest valued integer to the end (variable 'c').
     {
@@ -77,10 +76,6 @@ int main(int argc, char **argv) {
 int parse_int_argument(char *arg) {
     int result = 0;
 
-    // Iterate over the characters until we find the null terminator. Ensure that we don't exceed three characters
-    // because a string greater than three characters means the argument is beyond the 999 limit. For each iteration,
-    // check that the character is a digit. Accumulate the digit into the 'result' integer, making sure to multiply
-    // the result by 10 each time.
     while (*arg != '\0') {
         char dc; // The character value of the program argument which was validated as a digit.
         int d; // The integer value of the digit.
@@ -101,6 +96,7 @@ int parse_int_argument(char *arg) {
             return -1;
         }
 
+        // Move to the next character in the program argument.
         // (Is this considered pointer arithmetic?)
         arg++;
     }
