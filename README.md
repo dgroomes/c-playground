@@ -24,11 +24,16 @@ Follow these instructions to build and run a sample program.
 
 1. Pre-requisite: Clang
    * This comes with the Xcode Command Line Tools. I can never remember the procedure to install this. 
-2. Compile the code
+2. Compile the object code:
    * ```shell
-     clang -o build/sort sort.c
+     clang -c -o build/swap.o swap.c
+     clang -c -o build/sort.o sort.c
      ```
-3. Run the program
+3. Link the object code together:
+   * ```shell
+     clang -o build/sort build/sort.o build/swap.o
+     ```
+4. Run the program
    * ```shell
      ./build/sort 3 1 2
      ```
