@@ -14,6 +14,11 @@ this range, then return -1.
  */
 int parse_int_argument(char *arg);
 
+/*
+Swap the values at the memory locations pointed to by the given pointers.
+ */
+void swap(int *a, int *b);
+
 int main(int argc, char **argv) {
     // These represent the three integer arguments. Our goal is to sort the integer values into ascending order where
     // a < b < c.
@@ -40,30 +45,24 @@ int main(int argc, char **argv) {
     }
 
     // Normally, we would use a standard sorting function to sort the elements of an array, but we're going to hand-write
-    // some "hardcoded three-element" sorting code for the purpose of understanding pointers betters and learning C.
-    // Let's write a naive bubble sort!
+    // some "hardcoded three-element" sorting code for the purpose of understanding pointers better and learning C.
+    // This code implements a bubble sort.
 
     // Pass 1. This pushes the greatest valued integer to the end (variable 'c').
     {
         if (a > b) {
-            int temp = a;
-            a = b;
-            b = temp;
+            swap(&a, &b);
         }
 
         if (b > c) {
-            int temp = b;
-            b = c;
-            c = temp;
+            swap(&b, &c);
         }
     }
 
     // Pass 2. This pushes the next greatest valued integer to the second to the end (variable 'b').
     {
         if (a > b) {
-            int temp = a;
-            a = b;
-            b = temp;
+            swap(&a, &b);
         }
     }
 
@@ -102,4 +101,10 @@ int parse_int_argument(char *arg) {
     }
 
     return result;
+}
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
