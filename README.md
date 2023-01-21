@@ -1,7 +1,5 @@
 # c-playground
 
-NOT YET FULLY IMPLEMENTED
-
 📚 Learning and exploring the C programming language.
 
 > C is a general-purpose computer programming language. It was created in the 1970s by Dennis Ritchie, and remains very
@@ -26,6 +24,7 @@ Follow these instructions to build and run a sample program.
    * This comes with the Xcode Command Line Tools. I can never remember the procedure to install this. 
 2. Compile the object code:
    * ```shell
+     mkdir -p build
      clang -c -o build/swap.o swap.c
      clang -c -o build/sort.o sort.c
      ```
@@ -39,31 +38,23 @@ Follow these instructions to build and run a sample program.
      ```
    * Altogether, it will look like this:
      ```txt
-     $ clang -o build/sort sort.c
+     $ mkdir -p build
+     $ clang -c -o build/swap.o swap.c
+     $ clang -c -o build/sort.o sort.c
+     $ clang -o build/sort build/sort.o build/swap.o
      $ ./build/sort 3 1 2
      1 2 3
      ```
+   * In a normal project, you would use a Makefile to automate the build process. But for this example, it's important
+     to understand the concepts.
 
 
 ## Notes
 
-Conveniently compile and run the C program with a shell function:
-
-```shell
-doit() {
-  clang -o build/sort sort.c && ./build/sort "${@}"
-}
-```
-
-Invoke it with some arguments of your choosing, like this:
-
-```shell
-doit 3 1 2
-```
-
 I'm still figuring out the common/idiomatic naming conventions. Are functions snake case?
 
 Where do I find the C standard library documentation? I'm looking for something comprehensive and readable.
+
 
 ## Reference
 
