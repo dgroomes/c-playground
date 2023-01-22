@@ -16,51 +16,25 @@ me doing that.
 **NOTE**: This project was developed on macOS. It is for my own personal use.
 
 
-## Instructions
+## Standalone subprojects
 
-Follow these instructions to build and run a sample program.
+This repository illustrates different concepts, patterns and examples via standalone subprojects. Each subproject is
+completely independent of the others and do not depend on the root project. This _standalone subproject constraint_
+forces the subprojects to be complete and maximizes the reader's chances of successfully running, understanding, and
+re-using the code.
 
-1. Pre-requisite: Clang
-   * This comes with the Xcode Command Line Tools. I can never remember the procedure to install this. 
-2. Compile the object code:
-   * ```shell
-     mkdir -p build
-     clang -c -o build/swap.o swap.c
-     clang -c -o build/sort.o sort.c
-     ```
-3. Link the object code together:
-   * ```shell
-     clang -o build/sort build/sort.o build/swap.o
-     ```
-4. Run the program
-   * ```shell
-     ./build/sort 3 1 2
-     ```
-   * Altogether, it will look like this:
-     ```txt
-     $ mkdir -p build
-     $ clang -c -o build/swap.o swap.c
-     $ clang -c -o build/sort.o sort.c
-     $ clang -o build/sort build/sort.o build/swap.o
-     $ ./build/sort 3 1 2
-     1 2 3
-     ```
-   * In a normal project, you would use a Makefile to automate the build process. But for this example, it's important
-     to understand the concepts.
+The subprojects include:
+
+### `simple/`
+
+This is a "hello world"-style program for experienced programmers who are new to C.
+
+See the README in [simple/](simple/).
 
 
-## Notes
+## Wish List
 
-I'm still figuring out the common/idiomatic naming conventions. Are functions snake case?
+General clean-ups, TODOs and things I wish to implement for this project:
 
-Where do I find the C standard library documentation? I'm looking for something comprehensive and readable.
-
-
-## Reference
-
-* [Book: *Effective C: An Introduction to Professional C Programming by Robert C. Seacord*](https://nostarch.com/Effective_C)
-  * Perfect book for experienced programmers that want to learn C (me!).
-* [Wikipedia article: *Clang*](https://en.wikipedia.org/wiki/Clang)
-  * > Clang is a compiler front end for the C, C++, Objective-C, and Objective-C++ programming languages
-* [Codecademy C course](https://www.codecademy.com/catalog/language/c)
-  * (UPDATE: no, this is good for beginner programmers but I'll skip this). I think I'll try this Codecademy course to re-learn C.
+* [ ] Create a subproject that uses a Makefile to build the project. I only ever wanted to execute `clang` commands
+  directly in my start project (`simple/`) but now I want to do it the faster way.
