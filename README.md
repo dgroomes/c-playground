@@ -31,10 +31,17 @@ This is a "hello world"-style program for experienced programmers who are new to
 
 See the README in [simple/](simple/).
 
+### `cmake-with-external-library/`
+
+An example C project that uses CMake and consumes an external library.
+
+See the README in [cmake-with-external-library/](cmake-with-external-library/).
+
 
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] Create a subproject that uses a Makefile to build the project. I only ever wanted to execute `clang` commands
-  directly in my start project (`simple/`) but now I want to do it the faster way.
+* [x] DONE Create a subproject that uses a Makefile to build the project. I only ever wanted to execute `clang` commands
+  directly in my start project (`simple/`) but now I want to do it the faster way. I think I'm going to use CMake and
+  consume the popular [CRoaring](https://github.com/RoaringBitmap/CRoaring) bitmap library.

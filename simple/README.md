@@ -61,4 +61,4 @@ Where do I find the C standard library documentation? I'm looking for something 
 * [Wikipedia article: *Clang*](https://en.wikipedia.org/wiki/Clang)
     * > Clang is a compiler front end for the C, C++, Objective-C, and Objective-C++ programming languages
 * [Codecademy C course](https://www.codecademy.com/catalog/language/c)
-    * (UPDATE: no, this is good for beginner programmers but I'll skip this). I think I'll try this Codecademy course to re-learn C.
+    * (UPDATE: no, this is good for beginner programmers, but I'll skip this). I think I'll try this Codecademy course to re-learn C.

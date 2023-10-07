@@ -61,8 +61,8 @@ int parse_int_argument(char *arg) {
     int result = 0;
 
     while (*arg != '\0') {
-        char dc; // The character value of the program argument which was validated as a digit.
-        int d; // The integer value of the digit.
+        char dc; // The (c)haracter value of the program argument which was validated as a (d)igit.
+        int d; // The integer value of the (d)igit.
 
         dc = *arg;
         if (!isdigit(dc)) {

@@ -1,0 +1,4 @@
+build/
+
+# CLion uses this directory by convention (as far as I can tell as a novice CLion user)
+cmake-build-debug/
